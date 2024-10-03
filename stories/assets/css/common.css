@@ -1,0 +1,21 @@
+body {
+  font-family: sans-serif;
+}
+
+code {
+  color: #d63384;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 3px 6px;
+  border-radius: 4px;
+  background-color: rgba(214, 51, 132, 15%);
+}
+
+p {
+  color: #333;
+  line-height: 1.6;
+}
+
+ul {
+  margin: 0;
+}

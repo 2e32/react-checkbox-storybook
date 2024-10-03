@@ -1,0 +1,18 @@
+.mr-auto {
+  margin-right: auto;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.limited-container {
+  max-width: 300px;
+  height: 200px;
+  padding: 10px;
+  background-color: #dcdcdc;
+}
+
+.scaled-checkbox:active {
+  scale: 0.95 1;
+}

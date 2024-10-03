@@ -1,0 +1,65 @@
+.outlined-icon {
+  --selected: #232638;
+
+  /*
+    Длина контура квадрата. Получено с помощью SVGGeometryElement.getTotalLength()
+
+    const svg = document.querySelector('svg');
+    const rect = svg.querySelector('rect');
+    const length = rect.getTotalLength();
+  */
+  --box-length: 84.56;
+
+  /*
+    Смещение на половину длины стороны квадрата.
+
+    22 - полная длина стороны квадрата
+    2 - радиус загругления угла
+
+    Длина линии между загруглениями:
+    22 - (2 + 2) = 18
+
+    Половина длины стороны квадрата (закругления не учитываются):
+    18 / 2 = 9
+  */
+  --half-side-offset: -9;
+
+  /*
+    Длина контура галочки.
+
+    Длина пути, полученная с помощью getTotalLength() - 24.1.
+    Добавляем к пути радиусы закругления на обоих концах:
+    24.1 + (1 + 1) = 26.1
+  */
+  --mark-length: 26.1;
+}
+
+/* Прямоугольник, отвечающий за фон */
+.outlined-icon > rect:nth-child(1) {
+  stroke: #d6dbf1;
+}
+
+/* Прямоугольник, отвечающий за фон в выделенном состоянии */
+.outlined-icon > rect:nth-child(2) {
+  stroke: var(--selected);
+  stroke-dasharray: 0 var(--box-length);
+  stroke-dashoffset: var(--half-side-offset);
+  transition: stroke-dasharray 0.6s;
+}
+
+.outlined-icon--selected > rect:nth-child(2) {
+  stroke-dasharray: var(--box-length) 0;
+}
+
+.outlined-icon > polyline {
+  stroke: transparent;
+  stroke-dasharray: 0 var(--mark-length);
+  transition:
+    stroke 0.6s 0.4s,
+    stroke-dasharray 0.6s 0.4s;
+}
+
+.outlined-icon--selected > polyline {
+  stroke: var(--selected);
+  stroke-dasharray: var(--mark-length) 0;
+}

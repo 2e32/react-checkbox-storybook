@@ -1,0 +1,29 @@
+.indeterminate-list {
+  list-style: none;
+}
+
+.bordered {
+  padding: 5px;
+  border: 1px dashed red;
+}
+
+.mr-40 {
+  margin-right: 40px;
+}
+
+.link {
+  color: #0080ff;
+}
+
+.link:hover {
+  color: #ff002b;
+  text-decoration: underline;
+}
+
+.checkmark-position {
+  display: flex;
+}
+
+.checkmark-position > .e-checkbox:not(:last-child) {
+  margin-right: 30px;
+}

@@ -1,0 +1,39 @@
+.selectable-button {
+  height: 32px;
+  padding: 0 32px;
+}
+
+.selectable-button > .e-checkbox__box {
+  display: none;
+}
+
+.selectable-button > .e-checkbox__label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f95849;
+  font-weight: 600;
+}
+
+.button-ripple {
+  position: relative;
+}
+
+.button-ripple::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background-color: #fde8e6;
+  border-radius: 3px;
+  clip-path: circle(0%);
+  transition: clip-path 0.4s;
+  z-index: -1;
+}
+
+.button-ripple:has(input[type='checkbox']:checked)::before {
+  clip-path: circle(100%);
+}

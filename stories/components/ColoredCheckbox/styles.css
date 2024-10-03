@@ -1,0 +1,15 @@
+.e-checkbox__box--red {
+  color: red;
+}
+
+.e-checkbox__box--orange {
+  color: orange;
+}
+
+.e-checkbox:has(.e-checkbox__input:checked) .e-checkbox__box--green {
+  color: green;
+}
+
+.e-checkbox:has(.e-checkbox__input:checked) .e-checkbox__box--purple {
+  color: purple;
+}
